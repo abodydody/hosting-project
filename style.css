@@ -1,0 +1,109 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+header {
+    background: #5a2ca0;
+    color: white;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+} 
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+nav ul li {
+    margin: 0;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.logo img {
+    /* height: 40px; */
+    height: 60px
+}
+nav ul li a.icon img {
+  height: 20px;
+  width: 20px;
+  filter: invert(1);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section, .contact-section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #ED5E4B;
+    border-bottom: 2px solid #ED5E4B;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: url('bullet.png') no-repeat left center;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.contact-section a {
+    color: #ED5E4B;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-section a:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: #6a1b9a;
+    color: white;
+    text-align: center;
+    padding: 0.3rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
