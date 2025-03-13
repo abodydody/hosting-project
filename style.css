@@ -16,6 +16,7 @@ header {
     align-items: center;
     text-align: center;
     position: relative;
+
 }
 nav {
     width: 100%;
@@ -47,6 +48,28 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: #ED5E4B;
+    transition: width 0.9s;
+    left: 0;
+    bottom: -2px;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+
+}
+
+nav ul li a:hover {  
+    color: #ED5E4B;
 }
 .logo img {
     /* height: 40px; */
@@ -61,10 +84,11 @@ nav ul li a.icon img {
 .faq-container {
     max-width: 800px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 10px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 7vh;	;
 }
 
 .faq-section, .contact-section {
@@ -72,7 +96,7 @@ nav ul li a.icon img {
 }
 
 h2 {
-    color: #ED5E4B;
+    color: #5a2ca0;
     border-bottom: 2px solid #ED5E4B;
     padding-bottom: 5px;
 }
@@ -103,6 +127,8 @@ table {
     width: 80%;
     border-collapse: collapse;
     text-align: center;
+    margin-top: 10vh;
+    margin-bottom: 8.5vh;
   }
 th, td {
     border: 1px solid #000;
@@ -128,7 +154,7 @@ footer {
     color: white;
     text-align: center;
     padding: 0.3rem;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
   }
