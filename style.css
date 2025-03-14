@@ -81,7 +81,7 @@ nav ul li a.icon img {
   filter: invert(1);
 }
 
-.faq-container {
+.container {
     max-width: 800px;
     margin: 20px auto;
     padding: 10px;
@@ -91,7 +91,7 @@ nav ul li a.icon img {
     margin-bottom: 7vh;	;
 }
 
-.faq-section, .contact-section {
+.section, .contact-section {
     margin-bottom: 30px;
 }
 
