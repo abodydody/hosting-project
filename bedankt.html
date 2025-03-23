@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bedankt voor uw bestelling - KRAS HOSTING</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .thank-you-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .thank-you-icon {
+            font-size: 80px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-header {
+            color: #5a2ca0;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .order-confirmation {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .order-details {
+            margin-top: 20px;
+        }
+
+        .order-details h3 {
+            color: #5a2ca0;
+            border-bottom: 2px solid #ED5E4B;
+            padding-bottom: 10px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .next-steps {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f0f0ff;
+            border-radius: 8px;
+        }
+
+        .next-steps h3 {
+            color: #5a2ca0;
+            margin-top: 0;
+        }
+
+        .steps-list {
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .steps-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .steps-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #5a2ca0;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #4a1a90;
+        }
+
+        .confirmation-number {
+            font-family: monospace;
+            font-size: 18px;
+            letter-spacing: 1px;
+            color: #5a2ca0;
+            padding: 5px 10px;
+            background-color: #f0f0ff;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+               <a href="index.html"> <img src="logo.png" alt="Logo"></a>
+            </div>
+            <div class="nav-container">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="product.html">PRODUCTS</a></li>
+                    <li><a href="contact.html">CONTACTS</a></li>
+                    <li>
+                        <a href="dashboard.php">DASHBOARD</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="thank-you-container">
+        <div class="thank-you-icon">✓</div>
+        <h1 class="thank-you-header">Bedankt voor uw bestelling!</h1>
+        <p>Uw bestelling is succesvol geplaatst. We hebben een bevestiging naar uw e-mailadres gestuurd.</p>
+        
+        <div class="confirmation-number" id="order-number">ORDER-12345</div>
+        
+        <div class="order-confirmation">
+            <div class="order-details">
+                <h3>Bestelgegevens</h3>
+                <div class="detail-row">
+                    <span class="detail-label">Pakket:</span>
+                    <span id="package-name">...</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Prijs:</span>
+                    <span id="package-price">...</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Domeinnaam:</span>
+                    <span id="domain-name">...</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Betaalmethode:</span>
+                    <span id="payment-method">...</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="next-steps">
+            <h3>Wat gebeurt er nu?</h3>
+            <ol class="steps-list">
+                <li>Onze technische afdeling zal uw hosting binnen 24 uur activeren.</li>
+                <li>U ontvangt inloggegevens voor uw controlepaneel per e-mail.</li>
+                <li>Uw domein wordt geconfigureerd en gekoppeld aan uw hostingpakket.</li>
+                <li>Onze supportafdeling staat klaar om u te helpen bij vragen of problemen.</li>
+            </ol>
+        </div>
+        
+        <a href="index.html" class="back-btn">Terug naar homepagina</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 KRAS HOSTING. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Generate random order number
+            const orderNumber = 'ORDER-' + Math.floor(100000 + Math.random() * 900000);
+            document.getElementById('order-number').textContent = orderNumber;
+            
+            // Package data
+            const packages = {
+                1: { name: "Easy", price: "€2,99/maand" },
+                2: { name: "Functionals", price: "€5,99/maand" },
+                3: { name: "Pro", price: "€9,99/maand" },
+                4: { name: "Heavy user", price: "€14,99/maand" }
+            };
+            
+            // Payment methods
+            const paymentMethods = {
+                'ideal': 'iDEAL',
+                'creditcard': 'Creditcard',
+                'paypal': 'PayPal'
+            };
+            
+            // Get values from URL parameters or use defaults
+            const pakketId = urlParams.get('pakket-id') || 1;
+            const domainName = urlParams.get('domein') || 'uwdomein.nl';
+            const paymentMethod = urlParams.get('payment-method') || 'ideal';
+            
+            // Update order details
+            document.getElementById('package-name').textContent = packages[pakketId].name;
+            document.getElementById('package-price').textContent = packages[pakketId].price;
+            document.getElementById('domain-name').textContent = domainName;
+            document.getElementById('payment-method').textContent = paymentMethods[paymentMethod];
+        });
+    </script>
+</body>
+</html>

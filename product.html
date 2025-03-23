@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosting Pakketten - KRAS HOSTING</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .packages-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .packages-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .packages-header h1 {
+            color: #5a2ca0;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .packages-header p {
+            color: #666;
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .package-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .package-header {
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .easy {
+            background-color: #6a1b9a;
+        }
+        
+        .functionals {
+            background-color: #2196F3;
+        }
+        
+        .pro {
+            background-color: #4CAF50;
+        }
+        
+        .heavy {
+            background-color: #ED5E4B;
+        }
+        
+        .package-header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .package-header .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .package-price {
+            font-size: 32px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .package-features {
+            padding: 20px;
+        }
+        
+        .package-features ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .package-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            background: none;
+            padding-left: 0;
+        }
+        
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .package-features li:before {
+            content: "✓";
+            margin-right: 10px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        
+        .package-features .not-included:before {
+            content: "✕";
+            color: #e57373;
+        }
+        
+        .package-button {
+            display: block;
+            background-color: #5a2ca0;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .package-button:hover {
+            background-color: #4a1a90;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table th {
+            background-color: #5a2ca0;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .check {
+            color: #4CAF50;
+            font-size: 20px;
+        }
+        
+        .cross {
+            color: #e57373;
+            font-size: 20px;
+        }
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        
+        .faq-section h2 {
+            color: #5a2ca0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 15px;
+            background-color: #f5f5f5;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:after {
+            content: "+";
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-question:after {
+            content: "-";
+        }
+        
+        .faq-answer {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 15px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+               <a href="index.html"> <img src="logo.png" alt="Logo"></a>
+            </div>
+            <div class="nav-container">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="product.html" class="active">PRODUCTS</a></li>
+                    <li><a href="contact.html">CONTACTS</a></li>
+                    <li>
+                        <a href="dashboard.php">DASHBOARD</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="packages-container">
+        <div class="packages-header">
+            <h1>Onze Hosting Pakketten</h1>
+            <p>Vind het perfecte hosting pakket voor uw website. Van persoonlijke blogs tot grote bedrijfswebsites, wij hebben een oplossing die past bij uw behoeften.</p>
+        </div>
+        
+        <div class="packages-grid">
+            <div class="package-card">
+                <div class="package-header easy">
+                    <h2>Easy</h2>
+                    <div class="subtitle">Voor persoonlijke websites</div>
+                    <div class="package-price">€2,99/maand</div>
+                </div>
+                <div class="package-features">
+                    <ul>
+                        <li>5 GB webruimte</li>
+                        <li>1 website</li>
+                        <li>50 GB/maand bandbreedte</li>
+                        <li>5 e-mailadressen</li>
+                        <li>SSL-certificaat</li>
+                        <li>Dagelijkse backups</li>
+                        <li>24/7 Support</li>
+                        <li class="not-included">Gratis domein</li>
+                        <li class="not-included">Dedicated IP</li>
+                    </ul>
+                </div>
+                <a href="bestellen.html?pakket=1" class="package-button">Bestellen</a>
+            </div>
+            
+            <div class="package-card">
+                <div class="package-header functionals">
+                    <h2>Functionals</h2>
+                    <div class="subtitle">Voor bedrijfswebsites</div>
+                    <div class="package-price">€5,99/maand</div>
+                </div>
+                <div class="package-features">
+                    <ul>
+                        <li>20 GB webruimte</li>
+                        <li>3 websites</li>
+                        <li>200 GB/maand bandbreedte</li>
+                        <li>20 e-mailadressen</li>
+                        <li>SSL-certificaat</li>
+                        <li>Dagelijkse backups</li>
+                        <li>24/7 Support</li>
+                        <li>Gratis domein</li>
+                        <li class="not-included">Dedicated IP</li>
+                    </ul>
+                </div>
+                <a href="bestellen.html?pakket=2" class="package-button">Bestellen</a>
+            </div>
+            
+            <div class="package-card">
+                <div class="package-header pro">
+                    <h2>Pro</h2>
+                    <div class="subtitle">Voor professionele websites</div>
+                    <div class="package-price">€9,99/maand</div>
+                </div>
+                <div class="package-features">
+                    <ul>
+                        <li>50 GB webruimte</li>
+                        <li>10 websites</li>
+                        <li>500 GB/maand bandbreedte</li>
+                        <li>50 e-mailadressen</li>
+                        <li>SSL-certificaat</li>
+                        <li>Dagelijkse backups</li>
+                        <li>24/7 Support</li>
+                        <li>Gratis domein</li>
+                        <li>Dedicated IP</li>
+                    </ul>
+                </div>
+                <a href="bestellen.html?pakket=3" class="package-button">Bestellen</a>
+            </div>
+            
+            <div class="package-card">
+                <div class="package-header heavy">
+                    <h2>Heavy user</h2>
+                    <div class="subtitle">Voor high-traffic websites</div>
+                    <div class="package-price">€14,99/maand</div>
+                </div>
+                <div class="package-features">
+                    <ul>
+                        <li>100 GB webruimte</li>
+                        <li>Onbeperkt aantal websites</li>
+                        <li>Onbeperkte bandbreedte</li>
+                        <li>Onbeperkt aantal e-mailadressen</li>
+                        <li>SSL-certificaat</li>
+                        <li>Dagelijkse backups</li>
+                        <li>24/7 Support</li>
+                        <li>Gratis domein</li>
+                        <li>Dedicated IP</li>
+                        <li>Prioriteit support</li>
+                    </ul>
+                </div>
+                <a href="bestellen.html?pakket=4" class="package-button">Bestellen</a>
+            </div>
+        </div>
+        
+        <h2 style="text-align: center; color: #5a2ca0; margin-top: 50px;">Vergelijk onze pakketten</h2>
+        
+        <div style="overflow-x: auto;">
+            <table class="comparison-table">
+                <tr>
+                    <th>Functies</th>
+                    <th>Easy</th>
+                    <th>Functionals</th>
+                    <th>Pro</th>
+                    <th>Heavy user</th>
+                </tr>
+                <tr>
+                    <td>Webruimte</td>
+                    <td>5 GB</td>
+                    <td>20 GB</td>
+                    <td>50 GB</td>
+                    <td>100 GB</td>
+                </tr>
+                <tr>
+                    <td>Websites</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>10</td>
+                    <td>Onbeperkt</td>
+                </tr>
+                <tr>
+                    <td>Bandbreedte</td>
+                    <td>50 GB/maand</td>
+                    <td>200 GB/maand</td>
+                    <td>500 GB/maand</td>
+                    <td>Onbeperkt</td>
+                </tr>
+                <tr>
+                    <td>E-mailadressen</td>
+                    <td>5</td>
+                    <td>20</td>
+                    <td>50</td>
+                    <td>Onbeperkt</td>
+                </tr>
+                <tr>
+                    <td>Databases</td>
+                    <td>1</td>
+                    <td>5</td>
+                    <td>20</td>
+                    <td>Onbeperkt</td>
+                </tr>
+                <tr>
+                    <td>SSL-certificaat</td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Dagelijkse backups</td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Gratis domein</td>
+                    <td><span class="cross">✕</span></td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Dedicated IP</td>
+                    <td><span class="cross">✕</span></td>
+                    <td><span class="cross">✕</span></td>
+                    <td><span class="check">✓</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Prioriteit support</td>
+                    <td><span class="cross">✕</span></td>
+                    <td><span class="cross">✕</span></td>
+                    <td><span class="cross">✕</span></td>
+                    <td><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Prijs</td>
+                    <td>€2,99/maand</td>
+                    <td>€5,99/maand</td>
+                    <td>€9,99/maand</td>
+                    <td>€14,99/maand</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a href="bestellen.html?pakket=1" class="bestel-btn">Bestellen</a></td>
+                    <td><a href="bestellen.html?pakket=2" class="bestel-btn">Bestellen</a></td>
+                    <td><a href="bestellen.html?pakket=3" class="bestel-btn">Bestellen</a></td>
+                    <td><a href="bestellen.html?pakket=4" class="bestel-btn">Bestellen</a></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="faq-section">
+            <h2>Veelgestelde vragen over onze hosting</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Wat is webhosting en waarom heb ik het nodig?</div>
+                <div class="faq-answer">
+                    <p>Webhosting is een service die ruimte biedt op een server om uw website op het internet te publiceren. U heeft het nodig om uw website toegankelijk te maken voor bezoekers op het internet.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Wat is het verschil tussen shared hosting, VPS en dedicated hosting?</div>
+                <div class="faq-answer">
+                    <p>Bij shared hosting deelt u serverruimte met andere websites, wat goedkoper is maar minder prestaties biedt. Een VPS biedt toegewijde resources binnen een gedeelde omgeving. Dedicated hosting biedt een volledige server exclusief voor uw gebruik, wat de beste prestaties levert maar duurder is.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Hoe kies ik de juiste hostingprovider?</div>
+                <div class="faq-answer">
+                    <p>Let op betrouwbaarheid, uptime garanties, klantenservice, prijs-kwaliteitverhouding, schaalbaarheid en de specifieke functies die u nodig heeft voor uw website.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Wat betekent bandbreedte en hoeveel heb ik nodig?</div>
+                <div class="faq-answer">
+                    <p>Bandbreedte is de hoeveelheid data die tussen uw website en bezoekers wordt overgedragen. De benodigde hoeveelheid hangt af van uw verwachte verkeer en type content (afbeeldingen, video's, downloads).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 KRAS HOSTING. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ accordion functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentNode;
+                    
+                    // Toggle active class on the clicked item
+                    faqItem.classList.toggle('active');
+                    
+                    // Close other open FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            item.classList.remove('active');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

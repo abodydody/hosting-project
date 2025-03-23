@@ -113,6 +113,11 @@
             font-weight: bold;
             text-align: center;
             border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .package:hover {
+            transform: scale(1.05);
         }
         .purple { background: #6a1b9a; }
         .blue { background: #2196F3; }
@@ -150,12 +155,12 @@
             <div class="nav-container">
                 <ul>
                     <li><a href="index.html" class="active">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="prodacut.html">PRODUCTS</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="product.html">PRODUCTS</a></li>
                     <li><a href="contact.html">CONTACTS</a></li>
                     <li>
-                        <a href="#.html">DASHBOARD</a>
-                      </li>
+                        <a href="dashboard.php">DASHBOARD</a>
+                    </li>
                 </ul>
                 
             </div>
@@ -166,24 +171,24 @@
     </header>
     <main class="content">
         <section class="program">
-            <h2>Our Program</h2>
-            <p>Our fitness experts can help you discover new training techniques and exercises that offer a dynamic and efficient full-body workout.</p>
+            <h2>Onze Pakketten</h2>
+            <p>Onze web hosting pakketten bieden betrouwbare, snelle en veilige oplossingen voor uw website. Van persoonlijke blogs tot zakelijke websites, wij hebben het perfecte pakket voor u.</p>
             <div class="packages">
-                <div class="package purple">Pakket 1<br>Easy</div>
-                <div class="package blue">Pakket 2<br>Functionals</div>
-                <div class="package green">Pakket 3<br>Pro</div>
-                <div class="package red">Pakket 4<br>Heavy user</div>
+                <div class="package purple" onclick="location.href='bestellen.html?pakket=1'">Pakket 1<br>Easy</div>
+                <div class="package blue" onclick="location.href='bestellen.html?pakket=2'">Pakket 2<br>Functionals</div>
+                <div class="package green" onclick="location.href='bestellen.html?pakket=3'">Pakket 3<br>Pro</div>
+                <div class="package red" onclick="location.href='bestellen.html?pakket=4'">Pakket 4<br>Heavy user</div>
             </div>
         </section>
         <section class="updates">
             <h2>Vandaag</h2>
-            <p>Fijne dag vandaag.</p>
+            <p>Nieuwe servers geïnstalleerd voor nog betere prestaties.</p>
             <h2>Gisteren</h2>
-            <p>Fijne dag vandaag.</p>
+            <p>Verbeterde beveiliging uitgerold voor alle hosting pakketten.</p>
         </section>
     </main>
     <footer>
         <p>&copy; 2025 KRAS HOSTING. All rights reserved.</p>
-    </footer
+    </footer>
 </body>
 </html>

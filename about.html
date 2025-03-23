@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Over Ons - KRAS HOSTING</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .about-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .about-header h1 {
+            color: #5a2ca0;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .about-header p {
+            color: #666;
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .about-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .about-card h2 {
+            color: #5a2ca0;
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-left: 4px solid #ED5E4B;
+            padding-left: 10px;
+        }
+        
+        .about-card p {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .about-icon {
+            font-size: 48px;
+            color: #ED5E4B;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .mission-section {
+            background-color: #5a2ca0;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .mission-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .mission-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        .team-section {
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .team-section h2 {
+            color: #5a2ca0;
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            margin-bottom: 30px;
+        }
+        
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #5a2ca0;
+        }
+        
+        .team-member h3 {
+            color: #5a2ca0;
+            margin: 10px 0 5px;
+        }
+        
+        .team-member p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .team-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #5a2ca0;
+            border: 3px solid #5a2ca0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+               <a href="index.html"> <img src="logo.png" alt="Logo"></a>
+            </div>
+            <div class="nav-container">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html" class="active">ABOUT</a></li>
+                    <li><a href="product.html">PRODUCTS</a></li>
+                    <li><a href="contact.html">CONTACTS</a></li>
+                    <li>
+                        <a href="dashboard.php">DASHBOARD</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="about-container">
+        <div class="about-header">
+            <h1>Over KRAS Hosting</h1>
+            <p>KRAS Hosting biedt betrouwbare en gebruiksvriendelijke hostingoplossingen voor bedrijven uit het midden- en kleinbedrijf (MKB).</p>
+        </div>
+        
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-icon">⚡</div>
+                <h2>Onze Geschiedenis</h2>
+                <p>KRAS Hosting is opgericht in 2023 met als doel hoogwaardige hostingdiensten toegankelijk te maken voor iedereen. Wat begon als een klein initiatief, is uitgegroeid tot een toonaangevende hostingprovider in Nederland.</p>
+            </div>
+            
+            <div class="about-card">
+                <div class="about-icon">🚀</div>
+                <h2>Onze Aanpak</h2>
+                <p>Bij KRAS Hosting geloven we in eenvoud, snelheid en betrouwbaarheid. Onze servers zijn geoptimaliseerd voor maximale prestaties, en onze supportteam staat 24/7 klaar om u te helpen bij elke vraag of probleem.</p>
+            </div>
+            
+            <div class="about-card">
+                <div class="about-icon">🔒</div>
+                <h2>Onze Belofte</h2>
+                <p>Wij beloven transparante prijzen, geen verborgen kosten en een uptime garantie van 99,9%. Bij KRAS Hosting krijgt u altijd waar voor uw geld en de beste service die u kunt verwachten.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mission-section">
+        <h2>Onze Missie</h2>
+        <p>KRAS Hosting streeft ernaar om betrouwbare, veilige en betaalbare hostingoplossingen te bieden aan bedrijven van elke grootte. Wij geloven dat elke ondernemer toegang moet hebben tot professionele webhosting zonder technische barrières.</p>
+    </div>
+    
+    <div class="about-container">
+        <div class="team-section">
+            <h2>Ons Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-placeholder">R</div>
+                    <h3>Roney</h3>
+                    <p>Oprichter</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-placeholder">E</div>
+                    <h3>Evy</h3>
+                    <p>Technisch Directeur</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-placeholder">D</div>
+                    <h3>Delano</h3>
+                    <p>Hoofd Klantenservice</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-placeholder">R</div>
+                    <h3>Roan</h3>
+                    <p>Server Specialist</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="team-placeholder">A</div>
+                    <h3>Abdul</h3>
+                    <p>Webontwikkelaar</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 KRAS HOSTING. All rights reserved.</p>
+    </footer>
+</body>
+</html>
